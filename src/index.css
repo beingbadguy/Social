@@ -1,0 +1,13 @@
+* {
+  font-family: "Satoshi", sans-serif;
+  user-select: none;
+  overflow-x: hidden;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+}
