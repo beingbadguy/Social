@@ -1,7 +1,7 @@
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const Skel = () => {
+const Ton = () => {
   return (
     <div className="">
       <div className="flex items-center gap-3">
@@ -16,4 +16,4 @@ const Skel = () => {
   );
 };
 
-export default Skel;
+export default Ton;

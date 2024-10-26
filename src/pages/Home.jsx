@@ -5,7 +5,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { formatDistanceToNow } from "date-fns";
 import { CiTrophy } from "react-icons/ci";
 import { IoHeart } from "react-icons/io5";
-import Skel from "../components/skel";
+import Ton from "../components/Ton";
 
 const Home = () => {
   const { post, likeUnlikePost, user, likes, postLoading } =
@@ -24,8 +24,7 @@ const Home = () => {
       <div className="">
         {postLoading ? (
           <div>
-            <Skel />
-            <Skel />
+            <Ton />
           </div>
         ) : (
           <div>

@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { FirebaseContext } from "../context/Store";
-import Skel from "../components/skel";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import Skeleton from "react-loading-skeleton";
 
 const Search = () => {
   const { user, post, postLoading } = useContext(FirebaseContext);
@@ -21,7 +20,6 @@ const Search = () => {
         />
       </div>
       <hr className="my-1" />
-      {/* <Skel /> */}
 
       {postLoading ? (
         <div className="grid grid-cols-3 gap-2">
