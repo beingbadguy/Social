@@ -28,6 +28,14 @@ const Profile = () => {
     scrollTo(0, 0);
   }, []);
 
+  // const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <div className="w-full h-[100vh]">
       <div className="flex items-center justify-between p-2">

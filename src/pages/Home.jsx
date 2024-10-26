@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import LogoutButton from "../components/LogoutButton";
 import { FirebaseContext } from "../context/Store";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -6,18 +6,26 @@ import { formatDistanceToNow } from "date-fns";
 import { CiTrophy } from "react-icons/ci";
 import { IoHeart } from "react-icons/io5";
 import Ton from "../components/Ton";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { post, likeUnlikePost, user, likes, postLoading } =
     useContext(FirebaseContext);
-
-  // Function to format the timestamp
-  const formatTimestamp = (timestamp) => {
-    const date = new Date(
-      timestamp.seconds * 1000 + Math.floor(timestamp.nanoseconds / 1000000)
-    );
-    return formatDistanceToNow(date, { addSuffix: true });
-  };
+    
+    // Function to format the timestamp
+    const formatTimestamp = (timestamp) => {
+      const date = new Date(
+        timestamp.seconds * 1000 + Math.floor(timestamp.nanoseconds / 1000000)
+      );
+      return formatDistanceToNow(date, { addSuffix: true });
+    };
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+      if (!user) {
+      navigate("/login");
+    }
+  }, []);
 
   return (
     <div>
